@@ -32,6 +32,7 @@ eventEmitter.on("fire",(a)=>
       
 })
 eventEmitter.emit("fire")
+res.end("done")
 })
 
 
@@ -81,12 +82,12 @@ const authentication=(req,res,next)=>
          res.send("valid user")
         }
     }catch(e){
-        next();
+        next(username);
     }
 
 }
 
-app.use(errorhandler)
+//app.use(errorhandler)
 app.get("/users",authentication,(req,res)=>
 {
    res.send("user is not present")

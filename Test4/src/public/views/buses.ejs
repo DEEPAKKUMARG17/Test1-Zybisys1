@@ -1,0 +1,9 @@
+<%data.forEach((val,index)=>{%>
+<h1><%=(index+1)%>.<%=val.Buses%></h1>
+<h1> <%=val.price%></h1>
+<form action="booking" method="post">
+<input hidden name="bus" value="<%=val._id%>">
+<input type="hidden" name="user" value="<%=user%>">
+<input type="submit" value="submit">
+</form>
+<%})%>
